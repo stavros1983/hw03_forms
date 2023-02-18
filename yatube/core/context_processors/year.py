@@ -3,7 +3,7 @@ import datetime as dt
 
 def year(request):
     """Добавляет переменную с текущим годом."""
-    year = dt.datetime.now().strftime('%Y')
+    year = dt.datetime.now().year
     return {
-        'year': int(year),
+        'year': year,
     }

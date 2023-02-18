@@ -15,7 +15,7 @@ class Group(models.Model):
 
 
 class Post(models.Model):
-    text = models.TextField()
+    text = models.TextField(verbose_name="Текст записи")
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         User,
@@ -26,7 +26,8 @@ class Post(models.Model):
         Group,
         blank=True, null=True,
         on_delete=models.SET_NULL,
-        related_name='posts'
+        related_name='posts',
+        verbose_name="Группа"
     )
 
     class Meta:
